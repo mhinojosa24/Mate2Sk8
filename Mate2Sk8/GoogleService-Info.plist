@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>590684716512-jmdsq07vo2qbh9sfr2gt6du3r7q13kjh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.590684716512-jmdsq07vo2qbh9sfr2gt6du3r7q13kjh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCoBOc6BP8UXoA4ipahoGzcVdi6IO7C54Y</string>
+	<key>GCM_SENDER_ID</key>
+	<string>590684716512</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Maximo-Hinojosa.Mate2Sk8</string>
+	<key>PROJECT_ID</key>
+	<string>mate2sk8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mate2sk8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:590684716512:ios:07745f8eff7fc84e</string>
+	<key>DATABASE_URL</key>
+	<string>https://mate2sk8.firebaseio.com</string>
+</dict>
+</plist>
