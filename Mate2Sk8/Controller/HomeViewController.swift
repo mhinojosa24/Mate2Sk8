@@ -72,7 +72,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
         
 
-        
+        print("hi")
         let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
         
         if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
