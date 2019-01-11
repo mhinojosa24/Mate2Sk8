@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D1A296E5F17433E3A3B6BD1 /* Pods_Mate2Sk8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942F0DFAB75A4D56CB0A5E1B /* Pods_Mate2Sk8.framework */; };
+		C7858A4721E87B1F0000D7A1 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7858A4621E87B1F0000D7A1 /* Slide.swift */; };
+		C7858A4921E87B540000D7A1 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7858A4821E87B540000D7A1 /* Slide.xib */; };
 		C7917BF421E7D9480091A6F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7917BF321E7D9480091A6F4 /* GoogleService-Info.plist */; };
 		C7917BF621E8041D0091A6F4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7917BF521E8041D0091A6F4 /* HomeViewController.swift */; };
 		C79C8A7321E6C55B0046CF85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C8A7221E6C55B0046CF85 /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 		0FFC7DF3224629950C92A34C /* Pods-Mate2Sk8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mate2Sk8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mate2Sk8/Pods-Mate2Sk8.debug.xcconfig"; sourceTree = "<group>"; };
 		393FF7555BA47D6106DE261F /* Pods-Mate2Sk8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mate2Sk8.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mate2Sk8/Pods-Mate2Sk8.release.xcconfig"; sourceTree = "<group>"; };
 		942F0DFAB75A4D56CB0A5E1B /* Pods_Mate2Sk8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mate2Sk8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7858A4621E87B1F0000D7A1 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		C7858A4821E87B540000D7A1 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		C7917BF321E7D9480091A6F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7917BF521E8041D0091A6F4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C79C8A6F21E6C55B0046CF85 /* Mate2Sk8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mate2Sk8.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,8 @@
 				C79C8A8B21E6D77C0046CF85 /* Controller */,
 				C79C8A8C21E6D7B20046CF85 /* RoundedButton */,
 				C79C8A7621E6C55B0046CF85 /* Main.storyboard */,
+				C7858A4621E87B1F0000D7A1 /* Slide.swift */,
+				C7858A4821E87B540000D7A1 /* Slide.xib */,
 				C79C8A7921E6C55C0046CF85 /* Assets.xcassets */,
 				C79C8A7B21E6C55C0046CF85 /* LaunchScreen.storyboard */,
 				C79C8A7E21E6C55C0046CF85 /* Info.plist */,
@@ -179,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7858A4921E87B540000D7A1 /* Slide.xib in Resources */,
 				C79C8A7D21E6C55C0046CF85 /* LaunchScreen.storyboard in Resources */,
 				C7917BF421E7D9480091A6F4 /* GoogleService-Info.plist in Resources */,
 				C79C8A7A21E6C55C0046CF85 /* Assets.xcassets in Resources */,
@@ -248,6 +255,7 @@
 				C79C8A8921E6D70E0046CF85 /* SignupViewController.swift in Sources */,
 				C79C8A8721E6D5EC0046CF85 /* LoginViewController.swift in Sources */,
 				C79C8A7521E6C55B0046CF85 /* ViewController.swift in Sources */,
+				C7858A4721E87B1F0000D7A1 /* Slide.swift in Sources */,
 				C79C8A7321E6C55B0046CF85 /* AppDelegate.swift in Sources */,
 				C7917BF621E8041D0091A6F4 /* HomeViewController.swift in Sources */,
 			);
