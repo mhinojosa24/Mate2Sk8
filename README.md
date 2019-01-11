@@ -8,6 +8,7 @@ Mate2Sk8 essentially helps skateboarders find a mate of his or her choice of int
 - Every user can enable their location
 - Users can save their favorate Mate2Sk8
 - Users are able to see active users
+- Users are able to chat with eachother
 
 ## ToDo(S)
 - [x] Firebase and cocoa pods are installed
