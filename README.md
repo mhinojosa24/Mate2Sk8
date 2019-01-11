@@ -2,7 +2,7 @@
 Mate2Sk8 essentially helps skateboarders find a mate of his or her choice of interest to link up and most importantly to skate!
 
 ## Engineers
-- Maximo Hinojosa - IOS Developer and Founder
+- Maximo Hinojosa - iOS Developer and Founder
 
 ## Features ToDos
 - Every user can enable their location
