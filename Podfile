@@ -8,6 +8,8 @@ target 'Mate2Sk8' do
   # Pods for Mate2Sk8
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-
+pod 'Firebase/Storage'
+pod 'Firebase/Database'
+pod 'FirebaseUI/Storage'
 
 end

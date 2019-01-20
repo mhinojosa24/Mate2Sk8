@@ -1,27 +1,44 @@
 //
-//  RegisterViewController.swift
+//  SignupViewController.swift
 //  Mate2Sk8
 //
-//  Created by Maximo Hinojosa on 1/9/19.
+//  Created by Maximo Hinojosa on 1/13/19.
 //  Copyright © 2019 Maximo Hinojosa. All rights reserved.
 //
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class SignupViewController: UIViewController {
+    
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var retypePassword: UITextField!
-    
+    @IBOutlet weak var firstLine: UIView!
+    @IBOutlet weak var lastLine: UIView!
+    @IBOutlet weak var emailLine: UIView!
+    @IBOutlet weak var passwordLine: UIView!
+    @IBOutlet weak var retypeLine: UIView!
+    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
+    var iconImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        hideKeyboardTapped()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        updateUI()
+        setupNavbar()
     }
+    
     
     
     
@@ -32,7 +49,7 @@ class SignupViewController: UIViewController {
         guard let password = password.text else {return}
         
         
-        if firstName.count == 0{
+        if firstName == ""{
             let alertController = UIAlertController(title: "Name Error", message: "Please enter your name.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -40,7 +57,7 @@ class SignupViewController: UIViewController {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
             
-        } else if lastName.count == 0{
+        } else if lastName == ""{
             let alertController = UIAlertController(title: "Name Error", message: "Please enter your last name.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -49,6 +66,7 @@ class SignupViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         } else if !isValidEmail(email: email){
+            
             let alertController = UIAlertController(title: "Email Error", message: "Please enter your email.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -74,20 +92,42 @@ class SignupViewController: UIViewController {
         } else {
             
             Auth.auth().createUser(withEmail: email, password: password){ (user,error) in
-            if error == nil {
-                self.performSegue(withIdentifier: "signupToHome", sender: self)
-            } else {
                 
-                let alertCotroller = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                if error != nil {
+                    let alertCotroller = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertCotroller.addAction(defaultAction)
+                    
+                    self.present(alertCotroller, animated: true, completion: nil)
+                    
+                } else {
+                    //user is created with unique id and stored in database
+                    
+                    guard let userID = Auth.auth().currentUser?.uid else { return }
+
+                    let ref = Database.database().reference()
+                    let userReferences = ref.child("users").child(userID)
+                    let values = ["name": firstName, "email": email]
+                    userReferences.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                        if error != nil {
+                            print("error")
+                            print(error!)
+                            return
+                        }
+                    })
                 
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                
-                alertCotroller.addAction(defaultAction)
-                self.present(alertCotroller, animated: true, completion: nil)
+                    let destinationVC = ProfilePicViewController()
+                    self.navigationController?.pushViewController(destinationVC, animated: true)
+                    
+                }
             }
         }
     }
-}
+    
+    
+    
+    
     func isValidEmail(email:String?) -> Bool {
         
         guard email != nil else { return false }
@@ -98,6 +138,28 @@ class SignupViewController: UIViewController {
         print(pred.evaluate(with: email))
         return pred.evaluate(with: email)
     }
-
-
+    
+    
+    @IBAction func loginAction(_ sender: UIButton) {
+        let destinationVC = LoginViewController()
+        
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    func updateUI() {
+        firstLine.dropShadow(scale: true)
+        lastLine.dropShadow(scale: true)
+        emailLine.dropShadow(scale: true)
+        passwordLine.dropShadow(scale: true)
+        retypeLine.dropShadow(scale: true)
+        signupBtn.dropShadow(scale: true)
+        accountLabel.dropShadow(scale: true)
+        loginBtn.dropShadow(scale: true)
+    }
+    
+    func setupNavbar() {
+        
+        title = "SIGN UP"
+        
+    }
 }
